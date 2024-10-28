@@ -6,7 +6,8 @@
     <title>Nosso 12 meses</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body onclick="playBackgroundMusic()">
+    <audio id="background-music" src="assets/home.m4a" preload="auto"></audio>
     <div class="container">
       <section class="beginning">
         <div class="wrapper-title-content">
@@ -35,14 +36,14 @@
           </div>
         </div>
       </section>
-      <!---
-        <section>mes 1</section>
-      <section>mes 2</section>
-      <section>mes 3</section>
-      <section>fim</section>
-      -->
     </div>
   </body>
-  <style></style>
-  <script src="./script.js"></script>
+  <script>
+    function playBackgroundMusic() {
+      const audio = document.getElementById('background-music');
+      audio.play().catch((error) => {
+        console.log('Erro ao tentar reproduzir a música:', error);
+      });
+    }
+  </script>
 </html>
