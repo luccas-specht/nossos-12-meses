@@ -6,10 +6,9 @@
     <title>Nossos 12 meses</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <!-- before this was woring: onclick="playBackgroundMusic()"-->
   <body ontouchstart="playBackgroundMusic()">
     <audio id="background-music" src="assets/home.m4a" preload="auto"></audio>
-    <div class="container">
+    <div class="container" id="container-id">
       <section class="beginning">
         <div class="wrapper-title-content">
           <h1 class="title">
@@ -25,7 +24,6 @@
             nenê.
           </h3>
         </div>
-
         <div class="wrapper-scroll-down-content">
           <span class="scroll-down-instruction-text">
             Vamos relembrar juntos os nossos
@@ -39,12 +37,5 @@
       </section>
     </div>
   </body>
-  <script>
-    function playBackgroundMusic() {
-      const audio = document.getElementById('background-music');
-      audio.play().catch((error) => {
-        console.log('Erro ao tentar reproduzir a música:', error);
-      });
-    }
-  </script>
+  <script src="./script.js"></script>
 </html>
