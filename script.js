@@ -1,43 +1,24 @@
-const audio = document.getElementById('background-music');
-const divTag = document.getElementById('container-id');
+let isScrolling = false;
 
-const htmlWithPlayIcon = `
-  <div class="flat-music-icon" id="play-icon-id" onclick="playBackgroundMusic()">
-    <img src="./assets/play.png" alt="play music" />
-  </div>
-`;
-const htmlWithPauseIcon = `
-  <div class="flat-music-icon" id="pause-icon-id" onclick="pauseBackgroundMusic()">
-    <img src="./assets/pause.png" alt="pause music" />
-  </div>
-`;
+document.addEventListener('wheel', (event) => {
+  if (isScrolling) return;
 
-function addPlayIconOnScreen() {
-  const pauseIcon = document.getElementById('pause-icon-id');
-  if (pauseIcon) {
-    pauseIcon.remove();
-  }
-  divTag.innerHTML += htmlWithPlayIcon;
-}
+  const sections = document.querySelectorAll('section');
+  const direction = event.deltaY > 0 ? 1 : -1;
+  const currentScrollPosition = window.scrollY;
 
-function addPauseIconOnScreen() {
-  const playIcon = document.getElementById('play-icon-id');
-  if (playIcon) {
-    playIcon.remove();
-  }
-  divTag.innerHTML += htmlWithPauseIcon;
-}
-
-function playBackgroundMusic() {
-  audio.play().catch((error) => console.log(error));
-  addPauseIconOnScreen();
-}
-
-function pauseBackgroundMusic() {
-  audio.pause();
-  addPlayIconOnScreen();
-}
-
-function startPlayingBackgroundMusic() {
-  playBackgroundMusic();
-}
+  sections.forEach((section, index) => {
+    const sectionTop = section.offsetTop;
+    if (
+      currentScrollPosition >= sectionTop &&
+      currentScrollPosition < sectionTop + section.offsetHeight
+    ) {
+      const nextIndex = index + direction;
+      if (nextIndex >= 0 && nextIndex < sections.length) {
+        isScrolling = true;
+        sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => (isScrolling = false), 300);
+      }
+    }
+  });
+});
