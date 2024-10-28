@@ -6,7 +6,8 @@
     <title>Nossos 12 meses</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body onclick="playBackgroundMusic()" onscroll="playBackgroundMusic()">
+  <!-- before this was woring: onclick="playBackgroundMusic()"-->>
+  <body ontouchstart="playBackgroundMusic()">
     <audio id="background-music" src="assets/home.m4a" preload="auto"></audio>
     <div class="container">
       <section class="beginning">
