@@ -13,7 +13,7 @@ function handleScroll(direction) {
     const sectionBottom = sectionTop + section.offsetHeight;
 
     if (
-      currentScrollPosition >= sectionTop - 10 &&
+      currentScrollPosition >= sectionTop &&
       currentScrollPosition < sectionBottom
     ) {
       const nextIndex = index + direction;
@@ -21,7 +21,7 @@ function handleScroll(direction) {
       if (nextIndex >= 0 && nextIndex < sections.length) {
         isScrolling = true;
         sections[nextIndex].scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => (isScrolling = false), 1000); // Evita múltiplos scrolls
+        setTimeout(() => (isScrolling = false), 300); // Evita múltiplos scrolls
       }
     }
   });
@@ -36,10 +36,4 @@ document.addEventListener('wheel', (event) => {
 // Mobile touch events
 document.addEventListener('touchstart', (event) => {
   touchStartY = event.touches[0].clientY;
-});
-
-document.addEventListener('touchend', (event) => {
-  touchEndY = event.changedTouches[0].clientY;
-  const direction = touchStartY > touchEndY ? 1 : -1; // 1 para baixo, -1 para cima
-  handleScroll(direction);
 });
