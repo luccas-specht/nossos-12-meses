@@ -149,6 +149,9 @@ section {
 }
 
 .description-text {
+  max-width: 425px;
+  width: 100%;
+  text-align: left;
   font-size: 16px;
   font-weight: 600;
   color: var(--text-secondary);
