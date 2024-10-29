@@ -143,13 +143,13 @@ section {
 .main-content > img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  max-width: 425px;
+  object-fit: cover;
+  max-width: 330px;
   max-height: 400px;
 }
 
 .description-text {
-  max-width: 425px;
+  max-width: 330px;
   width: 100%;
   text-align: left;
   font-size: 16px;
