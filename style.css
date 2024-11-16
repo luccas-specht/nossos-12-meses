@@ -112,7 +112,7 @@ section {
 .dashed-border {
   min-height: 10%;
   max-height: 90%;
-  border: 2px dashed var(--text-primary);
+  border: 1px dashed var(--text-primary);
   position: relative;
   margin-left: 2px;
 }
