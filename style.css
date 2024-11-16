@@ -27,7 +27,6 @@ html {
 html,
 body {
   height: 100%;
-  background-color: var(--primary-background);
 }
 
 h1,
@@ -160,6 +159,7 @@ section {
 .beginning {
   justify-content: center;
   justify-content: space-evenly;
+  background-color: var(--primary-background);
 }
 
 .wrapper-title-content {
@@ -249,4 +249,16 @@ section {
 .flat-music-icon > img {
   width: 30px;
   height: 30px;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(15px);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 1s;
 }
