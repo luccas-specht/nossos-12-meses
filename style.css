@@ -60,6 +60,10 @@ section {
   min-height: 100vh;
 }
 
+sup {
+  font-size: 16px;
+}
+
 .primary-background-class {
   background-color: var(--primary-background);
 }
@@ -88,17 +92,6 @@ section {
   font-weight: bold;
   position: relative;
   padding-bottom: 8px;
-}
-
-.month-title::after {
-  content: '';
-  position: absolute;
-  margin: 0px 10px;
-  margin-top: 14px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--text-primary);
 }
 
 .content {
