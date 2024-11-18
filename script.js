@@ -10,3 +10,31 @@ const observerSection = new IntersectionObserver((entries) => {
 
 const elements = document.querySelectorAll('.hidden');
 elements.forEach((element) => observerSection.observe(element));
+
+const audio = document.getElementById('background-music');
+let isPlaying = false;
+function playMusic() {
+  audio
+    .play()
+    .then(() => {
+      console.log('Música tocando!');
+      isPlaying = true;
+    })
+    .catch((error) => {
+      console.error('Erro ao tocar música:', error.message);
+    });
+}
+
+function stopMusic() {
+  audio.pause();
+  console.log('Música pausada!');
+  isPlaying = false;
+}
+
+document.addEventListener('click', () => {
+  if (isPlaying) {
+    stopMusic();
+  } else {
+    playMusic();
+  }
+});
