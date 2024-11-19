@@ -30,6 +30,14 @@ function stopMusic() {
   console.log('Música pausada!');
   isPlaying = false;
 }
+//colocar icone
+document.addEventListener('scroll', () => {
+  if (isPlaying) {
+    stopMusic();
+  } else {
+    playMusic();
+  }
+});
 
 document.addEventListener('click', () => {
   if (isPlaying) {
