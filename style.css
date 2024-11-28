@@ -53,12 +53,17 @@ body {
   height: 100vh;
 }
 
+body > div {
+  min-width: 98.899vw;
+}
+
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 99vw;
+  min-width: 100%;
   min-height: 100vh;
+  overflow-x: visible;
 }
 
 sup {
@@ -114,7 +119,7 @@ sup {
 .dashed-border::after {
   content: '';
   position: absolute;
-  right: -5px;
+  right: -4.5px;
   top: 100%;
   width: 0;
   height: 0;
