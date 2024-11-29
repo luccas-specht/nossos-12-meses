@@ -12,7 +12,7 @@
   </head>
   <body>
     <audio id="background-music" src="assets/home.m4a" preload="auto"></audio>
-    <div>
+    <div class="general-wrapper">
       <section class="beginning" id="section-1">
         <div class="wrapper-title-content hidden">
           <h1 class="title">
@@ -294,9 +294,11 @@
         </main>
       </section>
     </div>
-    <button class="float-button hidden-float" onclick="handleIcon()" id="float">
+    <div class="float-button hidden-float" id="float">
+     <button onclick="handleIcon()">
       <img src="./assets/pause.svg" alt="icon" id="sound-icon" />
-    </button>
+     </button>
+    </div>
   </body>
   <script src="./script.js"> </script>
 </html>

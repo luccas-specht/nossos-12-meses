@@ -56,7 +56,7 @@ body {
   position: relative;
 }
 
-body > div {
+.general-wrapper {
   min-width: 98.899vw;
 }
 
@@ -80,15 +80,25 @@ sup {
   right: 0;
   display: flex;
   align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  width: 100%;
-  max-width: 100px;
+  justify-content: flex-start;
+  padding: 6px;
+  width: 90px;
   background-color: white;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
+}
+
+.float-button > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.float-button > button > img {
+  margin-left: 8px;
+  margin-top: 2px;
+  width: 30px;
+  height: 30px;
 }
 
 .hidden-float {
@@ -103,12 +113,6 @@ sup {
   filter: blur(0);
   transition: all 1s;
   transform: translateX(0);
-}
-
-.float-button > img {
-  margin-left: 8px;
-  width: 30px;
-  height: 30px;
 }
 
 .primary-background-class {
