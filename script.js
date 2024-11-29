@@ -27,3 +27,15 @@ const handleIcon = () => {
     isPlaying = false;
   }
 };
+
+window.addEventListener('scroll', () => {
+  const button = document.getElementById('float');
+  button.classList.add('show-float');
+});
+
+window.addEventListener('scrollend', () => {
+  setTimeout(() => {
+    const button = document.getElementById('float');
+    button.classList.remove('show-float');
+  }, 1500);
+});

@@ -74,14 +74,37 @@ sup {
 
 .float-button {
   position: fixed;
-  bottom: 60px;
-  right: 60px;
+  bottom: 50px;
+  right: 0;
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  max-width: 100px;
+  background-color: white;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.hidden-float {
+  opacity: 0;
+  filter: blur(15px);
+  transition: all 1.5s;
+  transform: translateX(100%);
+}
+
+.show-float {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 1s;
+  transform: translateX(0);
 }
 
 .float-button > img {
+  margin-left: 8px;
   width: 30px;
   height: 30px;
 }
