@@ -74,16 +74,16 @@ sup {
 
 .float-button {
   position: fixed;
-  bottom: 80px;
-  right: 50px;
+  bottom: 60px;
+  right: 60px;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .float-button > img {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 .primary-background-class {

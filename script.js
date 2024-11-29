@@ -12,17 +12,18 @@ const elements = document.querySelectorAll('.hidden');
 elements.forEach((element) => observerSection.observe(element));
 
 let isPlaying = false;
-let hasUserInteractedWith = false;
+
 const music = document.getElementById('background-music');
 
-window.addEventListener('click', () => {
-  hasUserInteractedWith = true;
-});
-
-window.addEventListener('scroll', () => {
-  if (hasUserInteractedWith && !isPlaying) {
+const handleIcon = () => {
+  const img = document.getElementById('sound-icon');
+  if (!isPlaying) {
+    img.setAttribute('src', './assets/play.svg');
     music.play();
     isPlaying = true;
-    console.log('Música tocando');
+  } else {
+    img.setAttribute('src', './assets/pause.svg');
+    music.pause();
+    isPlaying = false;
   }
-});
+};
