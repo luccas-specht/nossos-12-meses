@@ -12,7 +12,6 @@ const elements = document.querySelectorAll('.hidden');
 elements.forEach((element) => observerSection.observe(element));
 
 let isPlaying = false;
-
 const music = document.getElementById('background-music');
 
 const handleIcon = () => {
@@ -33,8 +32,12 @@ window.addEventListener('scroll', () => {
   button.classList.add('show-float');
 });
 
-window.addEventListener('scrollend', () => {
-  setTimeout(() => {
+// scrollend does not work for IOS: https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollend_event
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+
+  scrollTimeout = setTimeout(() => {
     const button = document.getElementById('float');
     button.classList.remove('show-float');
   }, 1500);
