@@ -42,3 +42,27 @@ window.addEventListener('scroll', () => {
     button.classList.remove('show-float');
   }, 1500);
 });
+
+const scrollToSectionWithDelay = (currentSection, delay = 500) => {
+  const targetSection = document.querySelector(`#section-${currentSection}`);
+
+  if (!targetSection) return;
+  targetSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+
+  if (currentSection > 1) {
+    setTimeout(() => {
+      scrollToSectionWithDelay(currentSection - 1, delay);
+    }, delay);
+  }
+};
+
+const backToBeginningLink = document.querySelector('.back-to-beginning');
+backToBeginningLink.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const currentSection = 12; // start from 12th section = section-12
+  scrollToSectionWithDelay(currentSection);
+});
