@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
   }, 1500);
 });
 
-const scrollToSectionWithDelay = (currentSection, delay = 500) => {
+const scrollToSectionWithDelay = (currentSection, delay = 1000) => {
   const targetSection = document.querySelector(`#section-${currentSection}`);
 
   if (!targetSection) return;
